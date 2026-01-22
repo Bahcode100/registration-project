@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background-color: #76b852;
+    }
+    
+    .container {
+        width: 350px;
+        height: 300px;
+        background-color: #fff;
+        margin: 110px auto;
+        text-align: center;
+        border-radius: 5px;
+        padding: 40px 50px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    
+    form input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 5px;
+        background-color: #f2f2f2;
+        border: 0;
+        outline: 0;
+    }
+    
+    input[type='submit'] {
+        background-color: #4CAF50;
+        border-radius: 3px;
+    }
+    
+    .customer {
+        width: 110px;
+        height: 50px;
+        background-color: brown;
+        margin: auto;
+        position: relative;
+        bottom: 80px;
+        border-radius: 30px;
+        padding: 7px;
+    }
+    
+    a {
+        color: #f3f3f3;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            {{ form.name }}
+            {{ form.last_name }}
+            {{ form.email }}
+            <input type="submit", name="Customer Form">
+        </form>
+    </div>
+    
+    <div class="customer">
+        <a href="{% url 'customer' %}">Customers</a>
+    </div>
+</body>
+</html>
+
+{% endblock %}

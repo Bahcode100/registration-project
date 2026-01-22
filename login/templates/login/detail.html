@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container">
+        <dl>
+            <dt>Name</dt>
+            <dd>{{ customer.name }}</dd>
+            <dt>Last Name</dt>
+            <dd>{{ customer.last_name }}</dd>
+            <dt>Email</dt>
+            <dd>{{ customer.email }}</dd>
+            <dt>Date</dt>
+            <dd>{{ customer.date_en }}</dd>
+        </dl>
+    </main>
+{% endblock  %}
+
+
